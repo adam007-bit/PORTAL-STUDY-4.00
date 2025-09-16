@@ -10,25 +10,20 @@
     .hero { background:#004080;color:#fff;padding:28px;border-radius:10px;margin-bottom:20px; }
     .card-topic { border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
     .quiz-option { cursor:pointer; }
-    .option-correct { background:#d4edda; border-color:#c3e6cb; }
-    .option-wrong { background:#f8d7da; border-color:#f5c6cb; }
+    .option-correct {
+      background-color: #28a745 !important;
+      color: white !important;
+      border-radius: 6px;
+    }
+    .option-wrong {
+      background-color: #dc3545 !important;
+      color: white !important;
+      border-radius: 6px;
+    }
     .result-badge { font-size:1rem; }
-    .btn-primary:focus, .btn-success:focus { box-shadow: none; }
     .note-link { text-decoration:none; }
     .section-title { font-family: "Playfair Display", serif; font-size:1.4rem; }
     .small-muted { color:#6c757d; font-size:0.9rem; }
-    .option.correct {
-  background-color: #28a745 !important; /* Hijau untuk betul */
-  color: white !important;
-  border-radius: 6px;
-}
-
-.option.incorrect {
-  background-color: #dc3545 !important; /* Merah untuk salah */
-  color: white !important;
-  border-radius: 6px;
-}
-
   </style>
 </head>
 <body>
@@ -36,10 +31,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background:#003366;">
   <div class="container">
     <a class="navbar-brand" href="index.html">📚 Portal Nota STPM</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nav">
+    <div class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Laman Utama</a></li>
         <li class="nav-item"><a class="nav-link active" href="#">Pengajian Am</a></li>
@@ -50,385 +42,190 @@
 
 <main class="container py-4">
   <div class="hero">
-    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+    <div class="d-flex justify-content-between flex-wrap gap-3">
       <div>
         <h1 class="mb-1">Pengajian Am — Nota & Kuiz (Silibus Baru)</h1>
         <div class="small-muted">Tingkatan 6 SEM 1 — susun ikut bab buku semasa. Klik "Baca Nota" untuk buka PDF.</div>
       </div>
       <div class="text-end">
         <div class="small-muted">#SS6 &nbsp;|&nbsp; <strong>#STRIVEFOR4</strong></div>
-        <a class="btn btn-light btn-sm mt-2" href="index.html">⬅️ Kembali ke Halaman Utama</a>
       </div>
     </div>
   </div>
 
-  <!-- Topik list: 7 topik -->
-  <div class="row g-4">
+  <!-- ================= TOPIK 1 ================= -->
+  <div class="card card-topic mb-4">
+    <div class="card-body">
+      <h3 class="section-title">Topik 1: Konsep Negara & Kerajaan</h3>
+      <p><a href="nota/topik1.pdf" class="btn btn-primary note-link" target="_blank">📖 Baca Nota</a></p>
 
-    <!-- ---------- TOPIK 1 ---------- -->
-    <div class="col-12">
-      <div class="card card-topic p-3">
-        <div class="d-flex justify-content-between align-items-start flex-column flex-md-row gap-3">
-          <div>
-            <h5 class="mb-1 section-title">Topik 1: Kemahiran Insaniah</h5>
-            <p class="mb-1 small-muted">Merangkumi kemahiran interpersonal(orang), kemahiran berkomunikasi,kemahiran mendengar,pengurusan masa dan empati.</p>
-            <a class="btn btn-outline-primary btn-sm note-link" href="nota/pengajianam/topik1.pdf" target="_blank">📖 Baca Nota (PDF)</a>
-          </div>
-          <div class="text-md-end">
-            <div class="small-muted">Kuiz topik ini</div>
-            <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#quiz1" aria-expanded="false">Tunjuk Kuiz</button>
-          </div>
+      <form class="quiz-form" data-quiz-id="1">
+        <p><strong>Kuiz:</strong> Apakah maksud "Negara Berdaulat"?</p>
+        <div class="list-group">
+          <button type="button" class="list-group-item quiz-option" data-q="1" data-correct="true">Negara yang bebas dan mempunyai kuasa penuh</button>
+          <button type="button" class="list-group-item quiz-option" data-q="1" data-correct="false">Negara yang mempunyai ramai penduduk</button>
+          <button type="button" class="list-group-item quiz-option" data-q="1" data-correct="false">Negara yang kaya dengan sumber</button>
         </div>
-
-        <div class="collapse mt-3" id="quiz1">
-          <div class="card-body pt-2">
-            <form class="quiz-form" data-quiz-id="1">
-              <div class="mb-3">
-                <label class="form-label">1. Apakah teknik terbaik untuk mengingati fakta baru?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item list-group-item-action quiz-option" data-correct="false" data-q="1">A. Baca sekali sahaja</button>
-                  <button type="button" class="list-group-item list-group-item-action quiz-option" data-correct="true" data-q="1">B. Ulang kaji berkala</button>
-                  <button type="button" class="list-group-item list-group-item-action quiz-option" data-correct="false" data-q="1">C. Menyalin semula tanpa faham</button>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">2. Apakah penting sebelum mula belajar?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item list-group-item-action quiz-option" data-correct="true" data-q="2">A. Sediakan tempat belajar yang tenang</button>
-                  <button type="button" class="list-group-item list-group-item-action quiz-option" data-correct="false" data-q="2">B. Tonton video hiburan</button>
-                  <button type="button" class="list-group-item list-group-item-action quiz-option" data-correct="false" data-q="2">C. Mula belajar tanpa rancangan</button>
-                </div>
-              </div>
-
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-success btn-check" data-quiz="1">Semak Jawapan</button>
-                <button type="button" class="btn btn-secondary btn-reset" data-quiz="1">Ulang</button>
-                <div class="ms-auto align-self-center"><span class="result-badge badge bg-info text-dark" id="result-1" style="display:none"></span></div>
-              </div>
-            </form>
-          </div>
+        <div class="mt-2">
+          <button type="button" class="btn btn-success btn-check" data-quiz="1">Semak Jawapan</button>
+          <button type="button" class="btn btn-outline-secondary btn-reset" data-quiz="1">Ulang</button>
+          <span id="result-1" class="badge bg-info result-badge ms-2" style="display:none;"></span>
         </div>
-
-      </div>
+      </form>
     </div>
+  </div>
 
-    <!-- ---------- TOPIK 2 ---------- -->
-    <div class="col-12">
-      <div class="card card-topic p-3">
-        <div class="d-flex justify-content-between align-items-start flex-column flex-md-row gap-3">
-          <div>
-            <h5 class="mb-1 section-title">Topik 2: Malaysia Negara Berdaulat</h5>
-            <p class="mb-1 small-muted">Konsep kedaulatan, perlembagaan dan institusi negara.</p>
-            <a class="btn btn-outline-primary btn-sm note-link" href="nota/pengajianam/topik2.pdf" target="_blank">📖 Baca Nota (PDF)</a>
-          </div>
-          <div class="text-md-end">
-            <div class="small-muted">Kuiz topik ini</div>
-            <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#quiz2" aria-expanded="false">Tunjuk Kuiz</button>
-          </div>
+  <!-- ================= TOPIK 2 ================= -->
+  <div class="card card-topic mb-4">
+    <div class="card-body">
+      <h3 class="section-title">Topik 2: Perlembagaan Malaysia</h3>
+      <p><a href="nota/topik2.pdf" class="btn btn-primary note-link" target="_blank">📖 Baca Nota</a></p>
+
+      <form class="quiz-form" data-quiz-id="2">
+        <p><strong>Kuiz:</strong> Perlembagaan Malaysia digubal pada tahun?</p>
+        <div class="list-group">
+          <button type="button" class="list-group-item quiz-option" data-q="2" data-correct="false">1948</button>
+          <button type="button" class="list-group-item quiz-option" data-q="2" data-correct="true">1957</button>
+          <button type="button" class="list-group-item quiz-option" data-q="2" data-correct="false">1963</button>
         </div>
-
-        <div class="collapse mt-3" id="quiz2">
-          <div class="card-body pt-2">
-            <form class="quiz-form" data-quiz-id="2">
-              <div class="mb-3">
-                <label class="form-label">1. Apakah maksud 'kedaulatan'?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item quiz-option" data-correct="true" data-q="1">A. Kuasa tertinggi sesebuah negara</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="1">B. Hanya undang-undang</button>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">2. Institusi manakah bertanggungjawab dalam pembuatan undang-undang?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="2">A. Mahkamah</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="true" data-q="2">B. Parlimen</button>
-                </div>
-              </div>
-
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-success btn-check" data-quiz="2">Semak Jawapan</button>
-                <button type="button" class="btn btn-secondary btn-reset" data-quiz="2">Ulang</button>
-                <div class="ms-auto align-self-center"><span class="result-badge badge bg-info text-dark" id="result-2" style="display:none"></span></div>
-              </div>
-            </form>
-          </div>
+        <div class="mt-2">
+          <button type="button" class="btn btn-success btn-check" data-quiz="2">Semak Jawapan</button>
+          <button type="button" class="btn btn-outline-secondary btn-reset" data-quiz="2">Ulang</button>
+          <span id="result-2" class="badge bg-info result-badge ms-2" style="display:none;"></span>
         </div>
-
-      </div>
+      </form>
     </div>
+  </div>
 
-    <!-- ---------- TOPIK 3 ---------- -->
-    <div class="col-12">
-      <div class="card card-topic p-3">
-        <div class="d-flex justify-content-between align-items-start flex-column flex-md-row gap-3">
-          <div>
-            <h5 class="mb-1 section-title">Topik 3: Perjanjian Malaysia 1963 (MA63)</h5>
-            <p class="mb-1 small-muted">Latar belakang, kepentingan dan perkara lain Perjanjian Malaysia1963(MA63).</p>
-            <a class="btn btn-outline-primary btn-sm note-link" href="nota/pengajianam/topik3.pdf" target="_blank">📖 Baca Nota (PDF)</a>
-          </div>
-          <div class="text-md-end">
-            <div class="small-muted">Kuiz topik ini</div>
-            <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#quiz3" aria-expanded="false">Tunjuk Kuiz</button>
-          </div>
+  <!-- ================= TOPIK 3 ================= -->
+  <div class="card card-topic mb-4">
+    <div class="card-body">
+      <h3 class="section-title">Topik 3: Sistem Demokrasi & Pilihan Raya</h3>
+      <p><a href="nota/topik3.pdf" class="btn btn-primary note-link" target="_blank">📖 Baca Nota</a></p>
+
+      <form class="quiz-form" data-quiz-id="3">
+        <p><strong>Kuiz:</strong> Badan yang mengendalikan pilihan raya di Malaysia ialah?</p>
+        <div class="list-group">
+          <button type="button" class="list-group-item quiz-option" data-q="3" data-correct="true">Suruhanjaya Pilihan Raya (SPR)</button>
+          <button type="button" class="list-group-item quiz-option" data-q="3" data-correct="false">Parlimen</button>
+          <button type="button" class="list-group-item quiz-option" data-q="3" data-correct="false">Jabatan Perdana Menteri</button>
         </div>
-
-        <div class="collapse mt-3" id="quiz3">
-          <div class="card-body pt-2">
-            <form class="quiz-form" data-quiz-id="3">
-              <div class="mb-3">
-                <label class="form-label">1. Negeri-negeri di bawah merupakan empat wilayah membentuk Persekutuan Malaysia pada 1963,KECUALI?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item quiz-option" data-correct="true" data-q="1">A. THAILAND</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="1">B. PERSEKUTUAN TANAH MELAYU</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="1">C. SINGAPURA</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="1">D. BORNEO UTARA(SABAH)</button>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">2. Bilakah Singapura dipisahkan dari Persekutuan Makaysia ?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="2">A. 16 SEPTEMBER 1963</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="true" data-q="2">B. 9 OGOS 1965</button>
-                </div>
-              </div>
-
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-success btn-check" data-quiz="3">Semak Jawapan</button>
-                <button type="button" class="btn btn-secondary btn-reset" data-quiz="3">Ulang</button>
-                <div class="ms-auto align-self-center"><span class="result-badge badge bg-info text-dark" id="result-3" style="display:none"></span></div>
-              </div>
-            </form>
-          </div>
+        <div class="mt-2">
+          <button type="button" class="btn btn-success btn-check" data-quiz="3">Semak Jawapan</button>
+          <button type="button" class="btn btn-outline-secondary btn-reset" data-quiz="3">Ulang</button>
+          <span id="result-3" class="badge bg-info result-badge ms-2" style="display:none;"></span>
         </div>
-
-      </div>
+      </form>
     </div>
+  </div>
 
-    <!-- ---------- TOPIK 4 ---------- -->
-    <div class="col-12">
-      <div class="card card-topic p-3">
-        <div class="d-flex justify-content-between align-items-start flex-column flex-md-row gap-3">
-          <div>
-            <h5 class="mb-1 section-title">Topik 4: TADBIR USUS NEGARA</h5>
-            <p class="mb-1 small-muted">KONSEP,ASPEK,PRINSIP dan KEPENTINGAN TADBIR URUS.</p>
-            <a class="btn btn-outline-primary btn-sm note-link" href="nota/pengajianam/topik4.pdf" target="_blank">📖 Baca Nota (PDF)</a>
-          </div>
-          <div class="text-md-end">
-            <div class="small-muted">Kuiz topik ini</div>
-            <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#quiz4" aria-expanded="false">Tunjuk Kuiz</button>
-          </div>
+  <!-- ================= TOPIK 4 ================= -->
+  <div class="card card-topic mb-4">
+    <div class="card-body">
+      <h3 class="section-title">Topik 4: Sistem Pentadbiran Negara</h3>
+      <p><a href="nota/topik4.pdf" class="btn btn-primary note-link" target="_blank">📖 Baca Nota</a></p>
+
+      <form class="quiz-form" data-quiz-id="4">
+        <p><strong>Kuiz:</strong> Apakah fungsi utama badan kehakiman?</p>
+        <div class="list-group">
+          <button type="button" class="list-group-item quiz-option" data-q="4" data-correct="false">Menggubal undang-undang</button>
+          <button type="button" class="list-group-item quiz-option" data-q="4" data-correct="false">Melaksanakan dasar</button>
+          <button type="button" class="list-group-item quiz-option" data-q="4" data-correct="true">Mentafsir & menguatkuasakan undang-undang</button>
         </div>
-
-        <div class="collapse mt-3" id="quiz4">
-          <div class="card-body pt-2">
-            <form class="quiz-form" data-quiz-id="4">
-              <div class="mb-3">
-                <label class="form-label">1. Apakah indikator kesejahteraan?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item quiz-option" data-correct="true" data-q="1">A. Kadar kemiskinan yang rendah</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="1">B. Kurang akses pendidikan</button>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">2. Program kerajaan yang menyokong kesejahteraan ialah?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item quiz-option" data-correct="true" data-q="2">A. Subsidi kebajikan</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="2">B. Pengurangan pendidikan</button>
-                </div>
-              </div>
-
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-success btn-check" data-quiz="4">Semak Jawapan</button>
-                <button type="button" class="btn btn-secondary btn-reset" data-quiz="4">Ulang</button>
-                <div class="ms-auto align-self-center"><span class="result-badge badge bg-info text-dark" id="result-4" style="display:none"></span></div>
-              </div>
-            </form>
-          </div>
+        <div class="mt-2">
+          <button type="button" class="btn btn-success btn-check" data-quiz="4">Semak Jawapan</button>
+          <button type="button" class="btn btn-outline-secondary btn-reset" data-quiz="4">Ulang</button>
+          <span id="result-4" class="badge bg-info result-badge ms-2" style="display:none;"></span>
         </div>
-
-      </div>
+      </form>
     </div>
+  </div>
 
-    <!-- ---------- TOPIK 5 ---------- -->
-    <div class="col-12">
-      <div class="card card-topic p-3">
-        <div class="d-flex justify-content-between align-items-start flex-column flex-md-row gap-3">
-          <div>
-            <h5 class="mb-1 section-title">Topik 5: SISTEM DAN STRUKTUR PEMERINTAHAN</h5>
-            <p class="mb-1 small-muted">.</p>
-            <a class="btn btn-outline-primary btn-sm note-link" href="nota/pengajianam/topik5.pdf" target="_blank">📖 Baca Nota (PDF)</a>
-          </div>
-          <div class="text-md-end">
-            <div class="small-muted">Kuiz topik ini</div>
-            <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#quiz5" aria-expanded="false">Tunjuk Kuiz</button>
-          </div>
+  <!-- ================= TOPIK 5 ================= -->
+  <div class="card card-topic mb-4">
+    <div class="card-body">
+      <h3 class="section-title">Topik 5: Dasar-Dasar Awam</h3>
+      <p><a href="nota/topik5.pdf" class="btn btn-primary note-link" target="_blank">📖 Baca Nota</a></p>
+
+      <form class="quiz-form" data-quiz-id="5">
+        <p><strong>Kuiz:</strong> Rancangan pembangunan pertama Malaysia dikenali sebagai?</p>
+        <div class="list-group">
+          <button type="button" class="list-group-item quiz-option" data-q="5" data-correct="true">Rancangan Malaya Pertama (1956-1960)</button>
+          <button type="button" class="list-group-item quiz-option" data-q="5" data-correct="false">Rancangan Malaysia Pertama (1966-1970)</button>
+          <button type="button" class="list-group-item quiz-option" data-q="5" data-correct="false">Dasar Ekonomi Baru</button>
         </div>
-
-        <div class="collapse mt-3" id="quiz5">
-          <div class="card-body pt-2">
-            <form class="quiz-form" data-quiz-id="5">
-              <div class="mb-3">
-                <label class="form-label">1. Apakah langkah pertama dalam projek?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item quiz-option" data-correct="true" data-q="1">A. Menentukan tajuk dan objektif</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="1">B. Terus membuat kesimpulan</button>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">2. Laporan projek mesti mengandungi?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item quiz-option" data-correct="true" data-q="2">A. Metodologi</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="2">B. Tiada bukti</button>
-                </div>
-              </div>
-
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-success btn-check" data-quiz="5">Semak Jawapan</button>
-                <button type="button" class="btn btn-secondary btn-reset" data-quiz="5">Ulang</button>
-                <div class="ms-auto align-self-center"><span class="result-badge badge bg-info text-dark" id="result-5" style="display:none"></span></div>
-              </div>
-            </form>
-          </div>
+        <div class="mt-2">
+          <button type="button" class="btn btn-success btn-check" data-quiz="5">Semak Jawapan</button>
+          <button type="button" class="btn btn-outline-secondary btn-reset" data-quiz="5">Ulang</button>
+          <span id="result-5" class="badge bg-info result-badge ms-2" style="display:none;"></span>
         </div>
-
-      </div>
+      </form>
     </div>
+  </div>
 
-    <!-- ---------- TOPIK 6 ---------- -->
-    <div class="col-12">
-      <div class="card card-topic p-3">
-        <div class="d-flex justify-content-between align-items-start flex-column flex-md-row gap-3">
-          <div>
-            <h5 class="mb-1 section-title">Topik 6: KEDAULATAN MALAYSIA</h5>
-            <p class="mb-1 small-muted">Analisis kandungan media, etika komunikasi dan kesan sosial.</p>
-            <a class="btn btn-outline-primary btn-sm note-link" href="nota/pengajianam/topik6.pdf" target="_blank">📖 Baca Nota (PDF)</a>
-          </div>
-          <div class="text-md-end">
-            <div class="small-muted">Kuiz topik ini</div>
-            <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#quiz6" aria-expanded="false">Tunjuk Kuiz</button>
-          </div>
+  <!-- ================= TOPIK 6 ================= -->
+  <div class="card card-topic mb-4">
+    <div class="card-body">
+      <h3 class="section-title">Topik 6: Isu-isu Semasa Negara</h3>
+      <p><a href="nota/topik6.pdf" class="btn btn-primary note-link" target="_blank">📖 Baca Nota</a></p>
+
+      <form class="quiz-form" data-quiz-id="6">
+        <p><strong>Kuiz:</strong> Apakah isu yang berkaitan dengan "Brain Drain"?</p>
+        <div class="list-group">
+          <button type="button" class="list-group-item quiz-option" data-q="6" data-correct="true">Kepakaran rakyat berhijrah ke luar negara</button>
+          <button type="button" class="list-group-item quiz-option" data-q="6" data-correct="false">Peningkatan kadar kelahiran</button>
+          <button type="button" class="list-group-item quiz-option" data-q="6" data-correct="false">Kejatuhan pasaran saham</button>
         </div>
-
-        <div class="collapse mt-3" id="quiz6">
-          <div class="card-body pt-2">
-            <form class="quiz-form" data-quiz-id="6">
-              <div class="mb-3">
-                <label class="form-label">1. Etika komunikasi bermaksud?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item quiz-option" data-correct="true" data-q="1">A. Tingkah laku bertanggungjawab dalam penyampaian maklumat</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="1">B. Beritahu apa sahaja tanpa disaring</button>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">2. Analisis kandungan bertujuan untuk?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item quiz-option" data-correct="true" data-q="2">A. Menilai mesej & implikasinya</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="2">B. Mengelakkan tafsiran</button>
-                </div>
-              </div>
-
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-success btn-check" data-quiz="6">Semak Jawapan</button>
-                <button type="button" class="btn btn-secondary btn-reset" data-quiz="6">Ulang</button>
-                <div class="ms-auto align-self-center"><span class="result-badge badge bg-info text-dark" id="result-6" style="display:none"></span></div>
-              </div>
-            </form>
-          </div>
+        <div class="mt-2">
+          <button type="button" class="btn btn-success btn-check" data-quiz="6">Semak Jawapan</button>
+          <button type="button" class="btn btn-outline-secondary btn-reset" data-quiz="6">Ulang</button>
+          <span id="result-6" class="badge bg-info result-badge ms-2" style="display:none;"></span>
         </div>
-
-      </div>
+      </form>
     </div>
+  </div>
 
-    <!-- ---------- TOPIK 7 ---------- -->
-    <div class="col-12">
-      <div class="card card-topic p-3">
-        <div class="d-flex justify-content-between align-items-start flex-column flex-md-row gap-3">
-          <div>
-            <h5 class="mb-1 section-title">Topik 7: BACAAN TAMBAHAN</h5>
-            <p class="mb-1 small-muted">Dasar luar, hubungan antarabangsa dan isu geopolitik.</p>
-            <a class="btn btn-outline-primary btn-sm note-link" href="nota/pengajianam/topik7.pdf" target="_blank">📖 Baca Nota (PDF)</a>
-          </div>
-          <div class="text-md-end">
-            <div class="small-muted">Kuiz topik ini</div>
-            <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#quiz7" aria-expanded="false">Tunjuk Kuiz</button>
-          </div>
+  <!-- ================= TOPIK 7 ================= -->
+  <div class="card card-topic mb-4">
+    <div class="card-body">
+      <h3 class="section-title">Topik 7: Hubungan Antarabangsa</h3>
+      <p><a href="nota/topik7.pdf" class="btn btn-primary note-link" target="_blank">📖 Baca Nota</a></p>
+
+      <form class="quiz-form" data-quiz-id="7">
+        <p><strong>Kuiz:</strong> Malaysia menjadi ahli Pertubuhan Bangsa-Bangsa Bersatu (PBB) pada tahun?</p>
+        <div class="list-group">
+          <button type="button" class="list-group-item quiz-option" data-q="7" data-correct="false">1955</button>
+          <button type="button" class="list-group-item quiz-option" data-q="7" data-correct="true">1957</button>
+          <button type="button" class="list-group-item quiz-option" data-q="7" data-correct="false">1963</button>
         </div>
-
-        <div class="collapse mt-3" id="quiz7">
-          <div class="card-body pt-2">
-            <form class="quiz-form" data-quiz-id="7">
-              <div class="mb-3">
-                <label class="form-label">1. Apa itu dasar luar?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item quiz-option" data-correct="true" data-q="1">A. Pendekatan negara dalam hubungan dengan negara lain</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="1">B. Hanya hal dalam negeri</button>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">2. Peranan Malaysia dalam ASEAN ialah?</label>
-                <div class="list-group">
-                  <button type="button" class="list-group-item quiz-option" data-correct="true" data-q="2">A. Memperkukuh kerjasama serantau</button>
-                  <button type="button" class="list-group-item quiz-option" data-correct="false" data-q="2">B. Menolak kerjasama antarabangsa</button>
-                </div>
-              </div>
-
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-success btn-check" data-quiz="7">Semak Jawapan</button>
-                <button type="button" class="btn btn-secondary btn-reset" data-quiz="7">Ulang</button>
-                <div class="ms-auto align-self-center"><span class="result-badge badge bg-info text-dark" id="result-7" style="display:none"></span></div>
-              </div>
-            </form>
-          </div>
+        <div class="mt-2">
+          <button type="button" class="btn btn-success btn-check" data-quiz="7">Semak Jawapan</button>
+          <button type="button" class="btn btn-outline-secondary btn-reset" data-quiz="7">Ulang</button>
+          <span id="result-7" class="badge bg-info result-badge ms-2" style="display:none;"></span>
         </div>
-
-      </div>
+      </form>
     </div>
-
-  </div> <!-- row -->
+  </div>
 
   <div class="text-center mt-5">
     <a href="index.html" class="btn btn-outline-secondary">⬅️ Kembali ke Halaman Utama</a>
   </div>
-
-  <div class="py-5"></div>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // QUIZ BEHAVIOUR: basic per-question immediate feedback + overall score per quiz
   document.addEventListener('click', function(e){
-    // handle click on an option button
     if (e.target.matches('.quiz-option')) {
       const btn = e.target;
-      // toggle selection within same question group
       const qNum = btn.getAttribute('data-q');
-      // find other options in same question (within same card)
       const parentList = btn.closest('.list-group');
-      parentList.querySelectorAll('.quiz-option').forEach(o => {
-        o.classList.remove('active');
-      });
+      parentList.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('active'));
       btn.classList.add('active');
-      // immediate visual feedback: avoid showing correct/wrong until Semak clicked
-      // but we can mark selected visually
     }
-
-    // handle Semak Jawapan
     if (e.target.matches('.btn-check')) {
-      const quizId = e.target.getAttribute('data-quiz');
-      checkQuiz(quizId);
+      checkQuiz(e.target.getAttribute('data-quiz'));
     }
-
-    // handle Ulang
     if (e.target.matches('.btn-reset')) {
-      const quizId = e.target.getAttribute('data-quiz');
-      resetQuiz(quizId);
+      resetQuiz(e.target.getAttribute('data-quiz'));
     }
   });
 
@@ -436,72 +233,36 @@
     const form = document.querySelector('.quiz-form[data-quiz-id="'+quizId+'"]');
     if (!form) return;
     const options = form.querySelectorAll('.quiz-option');
-    let totalQuestions = 0;
-    let correctCount = 0;
-
-    // Determine questions present by data-q values
-    const qs = new Set();
+    let qs = new Set();
     options.forEach(o => qs.add(o.getAttribute('data-q')));
-    totalQuestions = qs.size;
-
-    // For each question, find selected option
+    let correctCount = 0;
     qs.forEach(qn => {
-      const opts = Array.from(form.querySelectorAll('.quiz-option[data-q="'+qn+'"]'));
+      const opts = [...form.querySelectorAll('.quiz-option[data-q="'+qn+'"]')];
       const selected = opts.find(o => o.classList.contains('active'));
-      // clear previous classes
-      opts.forEach(o=>{
-        o.classList.remove('option-correct','option-wrong');
-        o.disabled = false;
-      });
-      if (!selected) {
-        // no selection => mark all options neutral
-        opts.forEach(o=> o.classList.remove('option-correct','option-wrong'));
-      } else {
-        // mark correct / wrong for this question
-        opts.forEach(o=>{
-          const isCorrect = o.getAttribute('data-correct') === 'true';
-          if (isCorrect) {
-            o.classList.add('option-correct');
-          }
+      opts.forEach(o => o.classList.remove('option-correct','option-wrong'));
+      if (selected) {
+        opts.forEach(o => {
+          if (o.dataset.correct === "true") o.classList.add('option-correct');
         });
-        if (selected.getAttribute('data-correct') === 'true') {
-          correctCount++;
-        } else {
-          // mark selected wrong
-          selected.classList.add('option-wrong');
-        }
+        if (selected.dataset.correct === "true") correctCount++;
+        else selected.classList.add('option-wrong');
       }
-      // disable options to prevent changes after checking
       opts.forEach(o => o.disabled = true);
     });
-
-    // show result badge
-    const badge = document.getElementById('result-' + quizId);
+    const badge = document.getElementById('result-'+quizId);
     badge.style.display = 'inline-block';
-    badge.innerText = `Skor: ${correctCount} / ${totalQuestions}`;
-
-    // optionally, scroll result into view
-    badge.scrollIntoView({behavior: 'smooth', block: 'center'});
+    badge.textContent = `Skor: ${correctCount} / ${qs.size}`;
   }
 
   function resetQuiz(quizId) {
     const form = document.querySelector('.quiz-form[data-quiz-id="'+quizId+'"]');
     if (!form) return;
-    const options = form.querySelectorAll('.quiz-option');
-    options.forEach(o=>{
+    form.querySelectorAll('.quiz-option').forEach(o => {
       o.classList.remove('active','option-correct','option-wrong');
       o.disabled = false;
     });
-    const badge = document.getElementById('result-' + quizId);
-    if (badge) badge.style.display = 'none';
+    document.getElementById('result-'+quizId).style.display = 'none';
   }
-
-  // Accessibility: allow keyboard selection (Enter) on focused option
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Enter' && document.activeElement && document.activeElement.classList.contains('quiz-option')) {
-      document.activeElement.click();
-    }
-  });
 </script>
 </body>
 </html>
