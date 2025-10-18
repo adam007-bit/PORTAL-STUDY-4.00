@@ -1,39 +1,240 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nota Pengajian Am - STPM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pengajian Am - Portal Nota STPM</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
-    body { background:#f8f9fa; font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-    .hero { background:#004080;color:#fff;padding:28px;border-radius:10px;margin-bottom:20px; }
-    .card-topic { border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
-    .note-link { text-decoration:none; }
-    .section-title { font-family: "Playfair Display", serif; font-size:1.4rem; }
-    .small-muted { color:#6c757d; font-size:0.9rem; }
+    body {
+      background: linear-gradient(135deg, #eaf4f4, #f8fbff);
+      font-family: 'Poppins', sans-serif;
+      color: #2c3e50;
+    }
+
+    h1 {
+      font-weight: 700;
+      color: #1d3557;
+    }
+
+    .note-box {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+    }
+
+    .topic {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 12px;
+      background: #f9fbfc;
+      border-left: 5px solid #00bfa6;
+    }
+
+    .topic h5 {
+      margin: 0;
+      font-weight: 600;
+      color: #00796b;
+    }
+
+    .topic a {
+      display: inline-block;
+      margin-top: 8px;
+      color: #0d6efd;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .topic a:hover {
+      text-decoration: underline;
+    }
+
+    /* Chat Section */
+    .chat-box {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      padding: 25px;
+    }
+
+    .chat-header {
+      background: linear-gradient(90deg, #009688, #00bfa6);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .chat-container {
+      background: #f9fbfc;
+      border-radius: 15px;
+      padding: 15px;
+      height: 350px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+      border: 1px solid #dee2e6;
+    }
+
+    .message {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      max-width: 80%;
+      word-wrap: break-word;
+      line-height: 1.5;
+    }
+
+    .user {
+      background: #00796b;
+      color: white;
+      text-align: right;
+      float: right;
+      border-bottom-right-radius: 0;
+    }
+
+    .bot {
+      background: #e9f7ef;
+      color: #2c3e50;
+      float: left;
+      border-bottom-left-radius: 0;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    textarea {
+      flex-grow: 1;
+      resize: none;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    button {
+      background: linear-gradient(90deg, #00bfa6, #009688);
+      border: none;
+      color: white;
+      border-radius: 12px;
+      padding: 10px 18px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #009688, #00796b);
+      transform: translateY(-1px);
+    }
+
+    a.btn-back {
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
   </style>
 </head>
 <body>
+  <div class="container py-5">
+    <a href="index.html" class="btn btn-secondary btn-back">⬅ Kembali ke Portal</a>
+    <h1 class="text-center mb-4">📘 Pengajian Am - STPM</h1>
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background:#003366;">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">📚 Portal Nota STPM</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Laman Utama</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Pengajian Am</a></li>
-      </ul>
+    <div class="note-box">
+      <h3 class="mb-3">📖 Nota Mengikut Tema</h3>
+
+      <div class="topic">
+        <h5>Tema 1: Sistem Pentadbiran Malaysia</h5>
+        <a href="https://drive.google.com/your-link1" target="_blank">📂 Muat turun nota (Google Drive)</a>
+      </div>
+
+      <div class="topic">
+        <h5>Tema 2: Hubungan Etnik dan Integrasi Nasional</h5>
+        <a href="https://drive.google.com/your-link2" target="_blank">📂 Buka nota (Google Drive)</a>
+      </div>
+
+      <div class="topic">
+        <h5>Tema 3: Peranan Malaysia di Peringkat Global</h5>
+        <a href="https://drive.google.com/your-link3" target="_blank">📂 Muat turun nota (Google Drive)</a>
+      </div>
+    </div>
+
+    <div class="chat-box">
+      <div class="chat-header">🤖 AI Tutor Pengajian Am</div>
+      <div id="chat" class="chat-container"></div>
+
+      <div class="input-area">
+        <textarea id="question" rows="2" placeholder="Tanya AI Tutor Pengajian Am..."></textarea>
+        <button id="sendBtn">Hantar</button>
+      </div>
     </div>
   </div>
-</nav>
 
-<main class="container py-4">
-  <div class="hero">
-    <div class="d-flex justify-content-between flex-wrap gap-3">
-      <div>
-        <h1 class="mb-1">Pengajian Am — Nota (Silibus Baru)</h1>
-        <div class="small-muted">Tingkatan 6 SEM 1 — disusun ikut bab buku semasa. Klik "Baca Nota" untuk buka PDF.</div>
+  <script>
+    const API_KEY = AIzaSyDRKyDg1yQfqT05A-CH_3xNgLq6bi6CIqI ; // ⚠️ Letak API key di sini
+
+    const chatBox = document.getElementById("chat");
+    const input = document.getElementById("question");
+    const sendBtn = document.getElementById("sendBtn");
+
+    function appendMessage(content, type) {
+      const msg = document.createElement("div");
+      msg.classList.add("message", type);
+      msg.innerText = content;
+      chatBox.appendChild(msg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    async function sendMessage() {
+      const question = input.value.trim();
+      if (!question) return;
+
+      appendMessage(question, "user");
+      input.value = "";
+
+      const loading = document.createElement("div");
+      loading.classList.add("message", "bot");
+      loading.innerText = "AI sedang menaip...";
+      chatBox.appendChild(loading);
+
+      const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${API_KEY}`
+        },
+        body: JSON.stringify({
+          model: "gpt-4o-mini",
+          messages: [
+            { role: "system", content: "Anda ialah AI Tutor Pengajian Am STPM. Jawab dalam Bahasa Melayu formal dan beri penjelasan ringkas, padat, serta contoh daripada konteks Malaysia." },
+            { role: "user", content: question }
+          ],
+          temperature: 0.6
+        })
+      });
+
+      const data = await response.json();
+      loading.remove();
+      const answer = data.choices?.[0]?.message?.content || "⚠️ Tiada respons daripada AI.";
+      appendMessage(answer, "bot");
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+    input.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+  </script>
+</body>
+</html>
       </div>
       <div class="text-end">
         <div class="big-muted">#SS6 &nbsp;|&nbsp; <strong>#STRIVEFOR4</strong></div>
