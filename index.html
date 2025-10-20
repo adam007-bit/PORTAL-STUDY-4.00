@@ -11,6 +11,8 @@
       background: linear-gradient(to bottom right, #f7f9fc, #e3f2fd);
       font-family: 'Poppins', sans-serif;
       color: #2c3e50;
+      position: relative;
+      min-height: 100vh;
     }
 
     /* === SLOGAN ANIMASI === */
@@ -33,7 +35,7 @@
     h1 {
       font-weight: 700;
       color: #1a237e;
-      margin-top: 60px;
+      margin-top: 70px;
     }
 
     .subject-card {
@@ -56,28 +58,51 @@
 
     footer {
       text-align: center;
-      padding: 25px;
+      padding: 40px 20px;
       margin-top: 60px;
       background-color: #1a237e;
       color: white;
-      border-radius: 10px 10px 0 0;
+      border-radius: 15px 15px 0 0;
       position: relative;
     }
 
-    .counter {
-      background: white;
-      color: #1a237e;
+    /* === COUNTDOWN STAIL PROFESSIONAL === */
+    .countdown-box {
       display: inline-block;
-      padding: 8px 15px;
-      border-radius: 15px;
+      background: linear-gradient(135deg, #ffffff, #e3f2fd);
+      color: #1a237e;
+      padding: 25px 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2), 0 4px 10px rgba(0,0,0,0.2);
       font-weight: 600;
-      margin-top: 8px;
-      box-shadow: 0 2px 6px rgba(255,255,255,0.2);
+      text-align: center;
       animation: fadeIn 1.5s ease;
+      min-width: 280px;
+    }
+
+    .countdown-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #0d47a1;
+      font-weight: 600;
+    }
+
+    .countdown-time {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #1b5e20;
+    }
+
+    .countdown-label {
+      font-size: 0.9rem;
+      color: #0d47a1;
+      font-weight: 500;
+      margin-top: 5px;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
@@ -92,34 +117,52 @@
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
-      <!-- Gantikan setiap link dengan link Google Drive sebenar -->
-      <div class="col"><a href="https://drive.google.com/your_pengajianam_link" target="_blank" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Pengajian Am</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com/your_sejarah_link" target="_blank" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Sejarah</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com/your_matematik_link" target="_blank" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Matematik</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com/your_physics_link" target="_blank" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Fizik</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com/your_chemistry_link" target="_blank" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Kimia</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com/your_muet_link" target="_blank" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">MUET</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com/your_geografi_link" target="_blank" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Geografi</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com/your_bm_link" target="_blank" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Bahasa Melayu</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com/your_ekonomi_link" target="_blank" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Ekonomi</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com/your_perniagaan_link" target="_blank" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Perniagaan</h4></div></a></div>
+      <div class="col"><a href="#" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Pengajian Am</h4></div></a></div>
+      <div class="col"><a href="#" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Sejarah</h4></div></a></div>
+      <div class="col"><a href="#" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Matematik</h4></div></a></div>
+      <div class="col"><a href="#" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Fizik</h4></div></a></div>
+      <div class="col"><a href="#" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Kimia</h4></div></a></div>
+      <div class="col"><a href="#" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">MUET</h4></div></a></div>
+      <div class="col"><a href="#" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Geografi</h4></div></a></div>
+      <div class="col"><a href="#" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Bahasa Melayu</h4></div></a></div>
+      <div class="col"><a href="#" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Ekonomi</h4></div></a></div>
+      <div class="col"><a href="#" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Perniagaan</h4></div></a></div>
 
     </div>
   </div>
 
   <footer>
     <p>© 2025 Portal Nota STPM | Dibina oleh <b>Adam</b></p>
-    <div class="counter mx-auto">
-      👁️ Pelawat: <span id="visitorCount">0</span>
+
+    <!-- COUNTDOWN BOX -->
+    <div class="countdown-box mx-auto mt-3">
+      <div class="countdown-title">⏳ Countdown Peperiksaan STPM</div>
+      <div id="countdown" class="countdown-time">00 : 00 : 00 : 00</div>
+      <div class="countdown-label">Hari : Jam : Minit : Saat</div>
     </div>
   </footer>
 
   <script>
-    // Counter STPM (simulasi guna localStorage)
-    let count = localStorage.getItem("stpmCount") || 0;
-    count++;
-    localStorage.setItem("stpmCount", count);
-    document.getElementById("visitorCount").innerText = count;
+    // === MASUKKAN TARIKH PEPERIKSAAN DI SINI ===
+    const examDate = new Date("November 25, 2025 08:00:00").getTime();
+
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = examDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `${days.toString().padStart(2,'0')} : ${hours.toString().padStart(2,'0')} : ${minutes.toString().padStart(2,'0')} : ${seconds.toString().padStart(2,'0')}`;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "📘 STPM SEDANG BERLANGSUNG!";
+      }
+    }, 1000);
   </script>
 
 </body>
