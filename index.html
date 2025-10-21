@@ -21,6 +21,7 @@
       background: white;
       transition: all 0.3s ease;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      cursor: pointer;
     }
     .subject-card:hover {
       transform: translateY(-6px);
@@ -81,6 +82,37 @@
       color: #388e3c;
       font-weight: 500;
     }
+
+    /* === SEMESTER BUTTONS === */
+    .semester-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 15px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .semester-buttons.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .semester-buttons button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .semester-buttons button:hover {
+      background-color: #388e3c;
+      transform: translateY(-3px);
+    }
   </style>
 </head>
 
@@ -96,23 +128,41 @@
       <div id="countdown"></div>
     </div>
 
+    <!-- SUBJECTS -->
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
-      <div class="col"><a href="https://drive.google.com" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Pengajian Am</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Sejarah</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Matematik</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Fizik</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Kimia</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">MUET</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Geografi</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Bahasa Melayu</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Ekonomi</h4></div></a></div>
-      <div class="col"><a href="https://drive.google.com" class="text-decoration-none"><div class="card subject-card text-center py-4"><h4 class="card-title">Perniagaan</h4></div></a></div>
+      <div class="col">
+        <div class="card subject-card text-center py-4" onclick="toggleSemester(this)">
+          <h4 class="card-title">Pengajian Am</h4>
+          <div class="semester-buttons">
+            <button onclick="playClick(); window.open('https://drive.google.com/drive/folders/152atFKq8-IN8-hJcsUoyiqWVDH11jwzk?usp=sharing')">Semester 1</button>
+            <button onclick="playClick(); window.open('https://drive.google.com/drive/folders/153cNZPdQlkY29INhoARs1EHO9X7WK4T-?usp=drive_link')">Semester 2</button>
+            <button onclick="playClick(); window.open('https://drive.google.com/drive/folders/158Os6JA_P5GJtnQ4XmB1pPHbo0Uz_EyH?usp=drive_link')">Semester 3</button>
+            <button onclick="playClick(); window.open('https://drive.google.com/drive/folders/17LxGILCbrTqlJGbb9Gp0mYt082Rd2he4?usp=drive_link')">Kerja Kursus</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ulang sama format ni untuk subjek lain -->
+      <div class="col">
+        <div class="card subject-card text-center py-4" onclick="toggleSemester(this)">
+          <h4 class="card-title">Sejarah</h4>
+          <div class="semester-buttons">
+            <button onclick="playClick(); window.open('https://drive.google.com/SEM1','_blank')">Semester 1</button>
+            <button onclick="playClick(); window.open('https://drive.google.com/SEM2','_blank')">Semester 2</button>
+            <button onclick="playClick(); window.open('https://drive.google.com/SEM3','_blank')">Semester 3</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tambah subjek lain ikut format sama -->
     </div>
   </div>
 
   <footer>
     <p>© 2025 Portal Nota STPM | Dibina oleh <b>Adam</b></p>
   </footer>
+
+  <audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1cfe4c4b4b.mp3?filename=click-124467.mp3"></audio>
 
   <script>
     const examDate = new Date("January 15, 2026 00:00:00").getTime();
@@ -139,9 +189,17 @@
         <div class="countdown-box">${seconds}<span class="countdown-label">Saat</span></div>
       `;
     }
-
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    function toggleSemester(card) {
+      const buttons = card.querySelector(".semester-buttons");
+      buttons.classList.toggle("show");
+    }
+
+    function playClick() {
+      document.getElementById("clickSound").play();
+    }
   </script>
 </body>
 </html>
